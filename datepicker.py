@@ -37,5 +37,4 @@ for ele in dates:
         ele.click()
         break
 
-# Close the browser
 driver.quit()

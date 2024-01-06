@@ -35,6 +35,5 @@ try:
     self_button.click()
 
 finally:
-    # Close the browser
     driver.quit()
 

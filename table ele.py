@@ -26,5 +26,4 @@ for r in range(2, noofRows + 1):
         print(data,end='                 ')
         print()
 
-# Close the browser
 driver.close()

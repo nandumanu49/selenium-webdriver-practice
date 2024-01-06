@@ -1,12 +1,8 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
-# Initialize WebDriver (assuming ChromeDriver is used)
 driver = webdriver.Chrome()
 
-
-
-# Open the webpage
 driver.get("https://the-internet.herokuapp.com/download_secure")
 
 # Get all the links on the page that lead to file downloads
@@ -21,5 +17,4 @@ for link in download_links:
     # This is a simple wait, and you may want to use a more robust mechanism
     driver.implicitly_wait(5)
 
-# Close the WebDriver
 driver.quit()

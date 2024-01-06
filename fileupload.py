@@ -1,30 +1,29 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-import os
-import time
 
-# Set up the WebDriver
+# Initialize WebDriver (assuming ChromeDriver is used)
 driver = webdriver.Chrome()
-driver.get("https://www.google.com/")
 
-# Find the Google Lens icon element by its class name
-google_lens_icon = driver.find_element(By.XPATH, "nDcEnd")
+# URL of the webpage with the file uploader
+url = "https://the-internet.herokuapp.com/upload"
 
-# Click on the Google Lens icon
-google_lens_icon.click()
-# Specify the file path to be uploaded
-file_path = r"C:\path\to\your\image.jpg"
+# File path to the image you want to upload
+file_path = r"C:\Users\nadu4\OneDrive\Pictures\Screenshots\Screenshot (663).png"
 
-# Use send_keys to attach the file to the file input
-upload_input.send_keys(os.path.abspath(file_path))
+# Open the webpage
+driver.get(url)
 
-# Wait for some time to see the uploaded file
-time.sleep(5)
+# Find the file input element using its ID ("file-upload")
+file_input = driver.find_element(By.ID, "file-upload")
 
-# Optionally, wait for some time to let the next page load
-# time.sleep(5)
+# Provide the file path for upload
+file_input.send_keys(file_path)
 
-# Perform other actions or assertions as needed
+# Find the submit button and click it
+submit_button = driver.find_element(By.ID, "file-submit")
+submit_button.click()
 
-# Close the browser window
+# Optional: Wait for some time to see the result or perform additional actions
+
+# Close the WebDriver
 driver.quit()
